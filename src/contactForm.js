@@ -80,6 +80,7 @@ const ContactForm =() =>{
         if (hasErrors) return;
 
 
+
         console.log('email is ' + form.email)
         console.log('password is ' + form.name)
         console.log('subject is ' + form.subject)
