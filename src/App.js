@@ -1,6 +1,5 @@
 
 import './App.css';
-
 import ContactForm from './contactForm';
 
 function App() {
