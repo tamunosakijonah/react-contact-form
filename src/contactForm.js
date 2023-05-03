@@ -50,6 +50,7 @@ const VALIDATION = {
 
 const ContactForm =() =>{
     const [form,setForm] =useState(INITIAL_STATE)
+    const [loading,setLoading] =useState(true)
     const errorFields = getErrorFields(form);
     console.log(errorFields);
 
@@ -76,6 +77,9 @@ const ContactForm =() =>{
             .catch(err =>{
                 console.log(err)
             })
+            .finally(()=>setLoading(false)
+            )
+
         const hasErrors = Object.values(errorFields).flat().length > 0;
         if (hasErrors) return;
 
@@ -89,6 +93,7 @@ const ContactForm =() =>{
     }
     return(
         <div>
+          {loading &&<p>page is loading</p>}
             <form onSubmit={handleSubmit}>
                 <div style={{padding:'8px'}}>
                     <label htmlFor='name'>Name</label>
